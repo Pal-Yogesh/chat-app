@@ -1,3 +1,4 @@
+
 import express from "express";
 import 'dotenv/config'
 import cookieParser from "cookie-parser";
@@ -13,13 +14,15 @@ import {app, server} from './socket/socket.js';
 
 const PORT = process.env.PORT || 5000;
 
+
+
 // to parse the incoming requests with json payloads
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/api/auth/", authRoutes);
-app.use("/api/messages/", messageRoutes);
-app.use("/api/users/", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
+app.use("/api/users", userRoutes);
 
 
 
